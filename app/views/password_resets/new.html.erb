@@ -1,0 +1,9 @@
+<h1>PasswordResets#new</h1>
+
+<%= form_for(:password_reset, url: password_reset_path) do |f| %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.submit "Reset" %>
+<% end %>

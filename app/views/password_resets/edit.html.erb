@@ -1,0 +1,18 @@
+<h1>Update User Password</h1>
+
+<%= form_for(@user, url: users_path) do |f| %>
+    <div class="field">
+        <%= @user.email %>
+    </div>
+
+    <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password, autofocus: true, placeholder: "New Password" %>
+        <%= f.password_field :password_confirmation, placeholder: "New Password Confirmation" %>
+    </div>
+
+    <div class="field">
+        <%= f.submit "Update Password" %>
+    </div>
+
+<% end %>

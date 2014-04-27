@@ -1,0 +1,5 @@
+<% @user.attributes.each do |k, v| %>
+    <p><strong><%= k %></strong>: <%= v %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_users_path %>
