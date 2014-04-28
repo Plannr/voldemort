@@ -9,9 +9,7 @@ Rails.application.routes.draw do
   get "user/reset", to: "password_resets#new", as: :new_password_reset
   get "user/activate/:token", to: "password_resets#edit", as: :edit_password_reset
 
-  get "uploads/:file_id/:basename.:extension", to: "receipts#download"
-  resources :receipts
-  get "tag/:name", to: "receipts#index", as: :tag
+  get "dashboard", to: "dashboards#index", as: :dashboard
 
   resource :users, path: "user"
 
