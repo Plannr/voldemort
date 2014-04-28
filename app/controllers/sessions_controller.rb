@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:session][:password])
             flash[:notice] = "Welcome, #{user.email}."
             signin(user)
-            redirect_to receipts_url
+            redirect_to dashboard_url
         else
             flash.now[:error] = "Invalid email/password combination."
             render "new"
