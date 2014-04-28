@@ -11,11 +11,16 @@
     <div class="page">
 
         <header id="header" class="site-header">
-            <h1 class="logo">Plannr</h1>
+            <h1 class="logo">
+                <% if signed_in? %>
+                    <%= link_to "Plannr", dashboard_url %>
+                <% else %>
+                    <%= link_to "Plannr", root_url %>
+                <% end %>
+            </h1>
 
             <nav>
                 <% if signed_in? %>
-                    <%= link_to "Receipts", receipts_path %>
                     <%= link_to "Account Settings", edit_users_path %>
                     <%= link_to "Logout", logout_path %>
                 <% else %>

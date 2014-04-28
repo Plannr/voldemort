@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get "user/reset", to: "password_resets#new", as: :new_password_reset
   get "user/activate/:token", to: "password_resets#edit", as: :edit_password_reset
 
+  get "dashboard", to: "dashboards#index", as: :dashboard
+
   resource :users, path: "user"
 
   root "static_pages#index"
