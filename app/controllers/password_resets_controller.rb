@@ -1,5 +1,5 @@
 class PasswordResetsController < ApplicationController
-    
+
     def new
         if signed_in?
             signout
