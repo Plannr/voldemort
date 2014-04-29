@@ -1,9 +1,9 @@
 class DashboardsController < ApplicationController
 
-    before_action :signed_in_user
+	before_action :signed_in_user
 
-    def index
+	def index
 
-    end
+	end
 
 end
