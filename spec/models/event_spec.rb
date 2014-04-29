@@ -25,5 +25,26 @@ describe Event do
   			end
   		end
   	end
+
+  	context('budget') do
+  		it "should be invalid if max is lower than min" do
+  			event.min_budget = 200
+  			event.max_budget = 100
+  			expect(event).to_not be_valid
+  		end
+
+  		['adsfa', -1, nil].each do |budget|
+  			it "should be invalid for min budget:#{budget.inspect}" do
+  				event.min_budget = budget
+  				expect(event).to_not be_valid
+  			end
+
+  			it "should be invalid for max budget:#{budget.inspect}" do
+  				event.max_budget = budget
+  				expect(event).to_not be_valid
+  			end
+
+  		end
+  	end
   end
 end
