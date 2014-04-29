@@ -6,8 +6,8 @@ Event.blueprint do
   title 								{ Faker::Lorem.sentence(3) }
   date									{ 4.weeks.from_now }
   guest_count						{ Faker::Number.number(2) }
-  min_budget						{ Faker::Number.number(3) }
-  max_budget						{ Faker::Number.number(4) }
+  min_budget						{ 100 }
+  max_budget						{ 500 }
   location							{ Faker::Address.city }
   details								{ Faker::Lorem.paragraph }
   planner								{ Faker::Name.name }
