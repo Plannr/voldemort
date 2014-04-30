@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 	validates :title, presence: true
 	validates :date, presence: true
 	validates :min_budget, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-	validates :max_budget, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+	validates :max_budget, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: :valid_budget }
 	validates :date,
           date: { after: Date.today + 1.week,
           				before: Date.today + 6.months }
@@ -12,15 +12,19 @@ class Event < ActiveRecord::Base
 
 
   def valid_budget
- 		errors.add(:min_budget, 'cannot be greater than max budget') if min_budget? && max_budget? && min_budget > max_budget
+    if min_budget?
+      min_budget
+    else 
+      0
+    end
   end
 
   def min_budget?
-  	min_budget.nil?
+  	!min_budget.nil?
   end
 
   def max_budget?
-  	max_budget.nil?
+  	!max_budget.nil?
   end
 
 end
