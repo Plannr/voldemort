@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
 
   has_many :receipts
 
-  has_many :events
+  # destroy all events if user is destroyed womp womp
+  has_many :events, dependent: :destroy
 
   has_secure_password
 

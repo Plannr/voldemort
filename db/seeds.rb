@@ -8,27 +8,22 @@
 
 
 #user
-if User.all.count > 0
-	User.create!(	email: 									"sunny@yourplannr.com", 
-								password: 							"nutella",
-								password_confirmation: 	"nutella", 
-								first_name: 						"sunny",
-								last_name: 							"vempati",
-							)
-	User.create!(	email: 									"john@yourplannr.com", 
-								password: 							"nutella",
-								password_confirmation: 	"nutella", 
-								first_name: 						"john",
-								last_name: 							"nguyen",
-							)
-
+if User.all.count == 0
+	u1 = User.create!(	email: 									"sunny@yourplannr.com", 
+											password: 							"nutella",
+											password_confirmation: 	"nutella", 
+											first_name: 						"sunny",
+											last_name: 							"vempati",
+										)
+	u2 = User.create!(	email: 									"john@yourplannr.com", 
+											password: 							"nutella",
+											password_confirmation: 	"nutella", 
+											first_name: 						"john",
+											last_name: 							"nguyen",
+										)
 end
 
-u = User.first
-u ||= User.create!(email:"sunny@yourplannr.com", 
-						password: "nutella", password_confirmation: "nutella", first_name: "sunny", last_name: "vempati")
-
-if u.events.count == 0
+if u1.events.count == 0
 	10.times.each do |e|
 		event_params = 
 		{
@@ -44,6 +39,26 @@ if u.events.count == 0
 		}
 
 		e = Event.new(event_params)
-		u.events.create(event_params) if e.valid?
+		u1.events.create(event_params) if e.valid?
+	end
+end
+
+if u2.events.count == 0
+	10.times.each do |e|
+		event_params = 
+		{
+			title: 				Faker::Lorem.sentence(3),
+			date: 				Faker::Number.number(2).to_i.weeks.from_now,
+			guest_count: 	Faker::Number.number(2),
+			min_budget: 	Faker::Number.number(3),
+			max_budget: 	Faker::Number.number(4),
+			location:			Faker::Address.city,
+	  	details:			Faker::Lorem.paragraph,
+	  	planner:			Faker::Name.name,
+	  	status:  			Faker::Lorem.word,
+		}
+
+		e = Event.new(event_params)
+		u2.events.create(event_params) if e.valid?
 	end
 end
