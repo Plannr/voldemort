@@ -4,11 +4,15 @@ class Event < ActiveRecord::Base
 	validates :date, presence: true
 	validates :min_budget, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 	validates :max_budget, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: :valid_budget }
+  validates :location, presence: true
+  validates :status, presence: true
 	validates :date,
           date: { after: Date.today + 1.week,
           				before: Date.today + 6.months }
 
   validate :valid_budget
+
+  belongs_to :user
 
 
   def valid_budget
