@@ -8,6 +8,22 @@
 
 
 #user
+if User.all.count > 0
+	User.create!(	email: 									"sunny@yourplannr.com", 
+								password: 							"nutella",
+								password_confirmation: 	"nutella", 
+								first_name: 						"sunny",
+								last_name: 							"vempati",
+							)
+	User.create!(	email: 									"john@yourplannr.com", 
+								password: 							"nutella",
+								password_confirmation: 	"nutella", 
+								first_name: 						"john",
+								last_name: 							"nguyen",
+							)
+
+end
+
 u = User.first
 u ||= User.create!(email:"sunny@yourplannr.com", 
 						password: "nutella", password_confirmation: "nutella", first_name: "sunny", last_name: "vempati")
