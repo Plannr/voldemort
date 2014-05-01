@@ -1,0 +1,25 @@
+.section {
+    padding: 0 1.5em;
+    &.section-text {
+        .section-description {
+            @include outer-container;
+            padding: 10em 0;
+            text-align: center;
+        }
+        .section-title {
+            font-family: "museo-slab", serif;
+            font-size: 3em;
+            line-height: 1;
+            color: $color-accent;
+        }
+        p {
+            padding: 0 9em;
+            line-height: 1.5;
+            font-size: 1.125em;
+            font-weight: lighter;
+            @media screen and (max-width: 768px) {
+                padding: 0;
+            }
+        }
+    }
+}
