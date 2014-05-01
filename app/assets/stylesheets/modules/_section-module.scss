@@ -22,4 +22,14 @@
             }
         }
     }
+    &.bg-full {
+        min-height: 42em;
+        color: #fff;
+        @media screen and (max-width: 768px) {
+            min-height: 32em;
+        }
+        @media screen and (max-width: 420px) {
+            min-height: 18em;
+        }
+    }
 }

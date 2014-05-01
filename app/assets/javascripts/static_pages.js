@@ -4,14 +4,17 @@
 var app = app || {};
 
 app.init = function () {
-    app.bgFull(".hero.bg-full");
+    app.bgFull(".bg-full");
 };
 
 app.bgFull = function ( selector ) {
     var el = $(selector);
-    var imgSrc = el.data('image-src');
-
-    console.log(el.css('background-image', 'url('+imgSrc+')'))
+    
+    $.each(el, function() {
+        var thisEl = $(this);
+        var imgSrc = thisEl.data('image-src');
+        thisEl.css('background-image', 'url('+imgSrc+')');
+    });
 };
 
 $(document).on('ready page:load', function () {

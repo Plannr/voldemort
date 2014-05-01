@@ -1,21 +1,4 @@
 <h1>Login</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-<%= form_for(:session, url: login_post_path) do |f| %>
-    
-    <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email %>
-    </div>
-
-    <div class="field">
-        <%= f.label :password, "Passphrase" %><br />
-        <%= f.password_field :password %>
-    </div>
-
-    <div class="field action">
-        <%= f.submit "Login" %>
-        <%= link_to "Forgot Password", password_reset_path %>
-    </div>
-
-<% end %>
+<%= render 'shared/login_form' %>
