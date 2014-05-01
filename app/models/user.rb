@@ -1,23 +1,26 @@
 class User < ActiveRecord::Base
 
-    has_many :receipts
+  has_many :receipts
 
-    has_secure_password
+  # destroy all events if user is destroyed womp womp
+  has_many :events, dependent: :destroy
 
-    validates :email, uniqueness: true
+  has_secure_password
 
-    def User.new_token
-        SecureRandom.urlsafe_base64
-    end
+  validates :email, uniqueness: true
 
-    def User.hash(token)
-        Digest::SHA1.hexdigest(token.to_s)
-    end
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
 
-    private
+  def User.hash(token)
+    Digest::SHA1.hexdigest(token.to_s)
+  end
 
-        def create_token
-            self.token = User.hash(User.new_token)
-        end
+  private
 
+  def create_token
+    self.token = User.hash(User.new_token)
+  end
+  
 end
