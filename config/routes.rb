@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resource :users, path: "user"
 
+  resource :events
+
   root "static_pages#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
