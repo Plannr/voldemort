@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post "contact", to: "notifications#contact", as: :contact_us
+
   get "login", to: "sessions#new", as: :login
   post "login", to: "sessions#create", as: :login_post
   get "logout", to: "sessions#destroy", as: :logout

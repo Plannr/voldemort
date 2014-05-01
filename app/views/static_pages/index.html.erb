@@ -43,6 +43,11 @@
 </section>
 
 <section class="section contact">
-    <%#= form_for do |f| %>
-    <%# end %>
+    <%= form_for(:notifications, url: :contact_us) do |f| %>
+        <%=  f.text_field :name, placeholder: "Name" %>
+        <%=  f.text_field :email, placeholder: "Email" %>
+        <%=  f.text_area :message, placeholder: "Message" %>
+
+        <%= f.submit "Send" %>
+    <% end %>
 </section>
