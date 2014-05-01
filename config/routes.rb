@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resource :users, path: "user"
 
-  resource :events
+  resources :events
 
   root "static_pages#index"
 
