@@ -3,11 +3,13 @@
 @import "bourbon";
 @import "neat";
 
+@import "variables";
 @import "mixin";
 @import "typography";
 
 @import "modules/btn-module";
 @import "modules/bg-full-module";
+@import "modules/section-module";
 @import "modules/hero-module";
 
 @import "layouts/generic";

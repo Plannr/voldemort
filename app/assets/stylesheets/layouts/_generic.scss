@@ -5,12 +5,18 @@
     @include outer-container;
     padding: 0 1.5em;
     position: absolute;
-    bottom: 25%;
+    top: 3em;
     left: 0;
     right: 0;
     z-index: 1;
+    .homepage & {
+        top: 640px;
+        @media screen and (max-width: 768px) {
+            top: 3em;
+            bottom: auto;
+        }
+    }
     @media screen and (max-width: 768px) {
-        top: 3em;
         bottom: auto;
     }
     a {
@@ -28,9 +34,9 @@
             line-height: 1;
             text-decoration: none;
             text-transform: lowercase;
-            vertical-align: bottom;
-            @media screen and (max-width: 768px) {
-                vertical-align: top;
+            vertical-align: top;
+            .homepage & {
+                vertical-align: bottom;
             }
         }
     }
