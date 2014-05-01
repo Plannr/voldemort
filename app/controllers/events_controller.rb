@@ -1,3 +1,7 @@
+# Needs index, edit, create, update, and destroy methods
+# Needs the views with respect to the public methods
+# Update the event params
+
 class EventsController < ApplicationController
 
   before_action :set_event, only: [:show, :edit, :update, :destroy]
@@ -11,7 +15,7 @@ class EventsController < ApplicationController
       @event = current_user.events.find(params[:id])
     end
 
-    def receipt_params
+    def event_params
       params.require(:events).permit(:user_id, :title)
     end
 end

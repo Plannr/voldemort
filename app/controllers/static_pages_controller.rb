@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
     set_body_class "homepage"
     
     if signed_in?
-      redirect_to receipts_url
+      redirect_to dashboard_url
     end
     
   end

@@ -3,24 +3,25 @@
 }
 .site-header {
     @include outer-container;
-    padding: 0 1.5em;
-    position: absolute;
-    top: 3em;
+    padding: 3em 1.5em 0;
+    position: relative;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 1;
+    @media screen and (max-width: 768px) {
+        bottom: auto;
+    }
     .homepage & {
+        position: absolute;
         top: 640px;
         @media screen and (max-width: 768px) {
             top: 3em;
             bottom: auto;
         }
-    }
-    @media screen and (max-width: 768px) {
-        bottom: auto;
-    }
-    a {
-        color: #fff;
+        a {
+            color: #fff;
+        }
     }
     nav {
         width: 50%;
@@ -29,13 +30,13 @@
         text-align: right;
         a {
             display: inline-block;
-            border-bottom: 1px solid #fff;
             font-size: 1.5em;
             line-height: 1;
             text-decoration: none;
             text-transform: lowercase;
             vertical-align: top;
             .homepage & {
+                border-bottom: 1px solid #fff;
                 vertical-align: bottom;
             }
         }
