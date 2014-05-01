@@ -17,4 +17,9 @@ class Notifications < ActionMailer::Base
         mail to: @user.email, subject: "Plannr Password Reset."
     end
 
+    def contact_by(form)
+        @form_data = form
+        mail to: "hello@yourplannr.com", subject: "[Contact Form]", from: @form_data["email"]
+    end
+
 end
