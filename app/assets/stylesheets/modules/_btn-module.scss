@@ -1,0 +1,10 @@
+.btn {
+    display: inline-block;  
+    padding: .75em 1.5em;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    &:focus {
+        outline: none;
+    }
+}

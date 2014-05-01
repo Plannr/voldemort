@@ -1,0 +1,51 @@
+.hero {
+    padding-bottom: 65%;
+    color: #fff;
+    @media screen and (max-width: 768px) {
+        padding-bottom: 80%;
+    }
+    .section-description {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+    .section-title {
+        margin-top: 15%;
+        margin-bottom: 1.5em;
+        font-size: 3em;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        font-weight: normal;
+        text-shadow: 0 -2px 5px #333;
+        text-transform: lowercase;
+        @media screen and (max-width: 768px) {
+            margin-top: 25%;
+            margin-bottom: .75em;
+            font-size: 2.5em;
+        }
+        @media screen and (max-width: 420px) {
+            margin-top: 40%;
+            font-size: 1.5em;
+            line-height: 1;
+        }
+    }
+    .btn {
+        padding: .75em 2em;
+        background-color: #f26c55;
+        @include gradient(linear,top,rgb(242, 108, 85),rgb(243, 81, 53),'left top, left bottom');
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f26c55', EndColorStr='#f35135');
+        font-family: "Arial", sans-serif;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        text-transform: lowercase;
+        @media screen and (max-width: 420px) {
+            font-size: 1em;
+        }
+        &:hover {
+            background-color: #f26c55;
+            @include gradient(linear,top,rgb(243, 81, 53),rgb(242, 108, 85),'left top, left bottom');
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f35135', EndColorStr='#f26c55');
+        }
+    }
+}
