@@ -3,6 +3,9 @@
     position: relative;
     .section-description {
         @include outer-container;
+        .tight-col & {
+            max-width: 48em;
+        }
         .left {
             position: absolute;
             left: 3em;
@@ -46,6 +49,12 @@
         }
         @media screen and (max-width: 420px) {
             min-height: 18em;
+        }
+    }
+    &.contact {
+        padding: 6em 0 3em;
+        .section-description {
+            padding: 0 1.5em;
         }
     }
 }

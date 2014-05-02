@@ -38,6 +38,7 @@
         background-color: #f26c55;
         @include gradient(linear,top,rgb(242, 108, 85),rgb(243, 81, 53),'left top, left bottom');
         filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f26c55', EndColorStr='#f35135');
+        color: #fff;
         font-family: "Arial", sans-serif;
         font-size: 1.5em;
         letter-spacing: 1px;

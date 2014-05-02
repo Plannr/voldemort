@@ -4,7 +4,7 @@
     </noscript>
     <div class="section-description">
         <h1 class="section-title">Your planner at your finger tips</h1>
-        <button class="btn section-action">Plan my event</button>
+        <%= link_to "Plan my event", register_user_path, class: "btn section-action" %>
     </div>
 </section>
 
@@ -47,11 +47,40 @@
 </section>
 
 <section class="section contact">
-    <%= form_for(:notifications, url: :contact_us) do |f| %>
-        <%=  f.text_field :name, placeholder: "Name" %>
-        <%=  f.text_field :email, placeholder: "Email" %>
-        <%=  f.text_area :message, placeholder: "Message" %>
+    <div class="section-description">
+        <h1 class="section-title">Get in touch with us.</h1>
+        <div class="col-2">
+            <div class="col-block">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="col-block">
+                <%= form_for(:notifications, url: :contact_us) do |f| %>
+                    <div class="col-2">
+                        <div class="field">
+                            <%=  f.label :name %>
+                            <%=  f.text_field :name, placeholder: "e.g. John Smith" %>
+                        </div>
+                        <div class="field">
+                            <%=  f.label :email %>
+                            <%=  f.text_field :email, placeholder: "e.g. jsmith@xyz.com" %>
+                        </div>
+                    </div>
 
-        <%= f.submit "Send" %>
-    <% end %>
+                    <div class="field">
+                        <%=  f.label :message %>
+                        <%=  f.text_area :message %>
+                    </div>
+
+                    <div class="field action">
+                        <%= f.submit "Send" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </section>
