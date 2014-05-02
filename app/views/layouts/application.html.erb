@@ -27,7 +27,10 @@
                     <%= link_to "Account Settings", edit_users_path %>
                     <%= link_to "Logout", logout_path %>
                 <% else %>
-                    <%= link_to "Login", login_path %>
+                    <%= link_to "Login", login_path, class: "login", data: { toggle: "login-form" } %>
+                    <div id="login-form" class="login-form toggle">
+                        <%= render 'shared/login_form' %>
+                    </div>
                     <%#= link_to "Register", register_user_path %>
                 <% end %>
             </nav>
