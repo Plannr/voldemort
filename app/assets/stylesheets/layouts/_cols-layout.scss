@@ -6,16 +6,23 @@
         content: "";
     }
     .col-block {
-        width: 50%;
-        float: left;
         &:first-child {
             padding-right: 1.5em;
         }
     }
 }
 .col-block {
+    width: 50%;
     float: left;
     &.col-block-right {
         float: right;
     }
+}
+
+.col-block-9 {
+    width: 75%;
+}
+
+.col-block-3 {
+    width: 25%;
 }

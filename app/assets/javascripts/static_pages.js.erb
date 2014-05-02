@@ -52,6 +52,14 @@ app.bindEvents = function () {
 
         return false;
     });
+
+    $('.btn-toggle').on('click', function (e) {
+        var el = $(this);
+
+        el.next().toggleClass('toggle');
+        
+        return false;
+    });
 };
 
 app.bgFull = function ( selector ) {

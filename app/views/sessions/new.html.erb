@@ -1,4 +1,19 @@
-<h1>Login</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<% provide(:title, "Login") %>
 
-<%= render 'shared/login_form' %>
+
+<section class="section bg-full" data-image-src="<%= image_path('hero-1.jpg') %>">
+    <noscript>
+        <%= image_tag image_path('hero-1.jpg') %>
+    </noscript>
+    <div class="section-description">
+        <h1 class="section-title">Login</h1>
+        <div class="col-2">
+            <div class="col-block">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="col-block col-block-right">
+                <%= render 'shared/login_form' %>
+            </div>
+        </div>
+    </div>
+</section>

@@ -7,8 +7,8 @@ class Event < ActiveRecord::Base
 	validates :max_budget, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: :valid_budget }
   validates :location, presence: true
   validates :status, presence: true
-	validates :date,
-          date: { after: Date.today + 1.week }
+	# validates :date, date: { after: Date.today + 1.week }
+  # provide a useful and user friendly error msg if picked date is invalid.
 
   validate :valid_budget
 

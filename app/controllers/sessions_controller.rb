@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+    before_action { set_body_class "tight-col" }
+
     def new
         
     end
