@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  self.inheritance_column = nil
 	validates :guest_count, presence: true
 	validates :title, presence: true, uniqueness: true
 	validates :date, presence: true
