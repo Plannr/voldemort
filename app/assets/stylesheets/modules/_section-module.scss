@@ -1,8 +1,24 @@
 .section {
     padding: 0 1.5em;
+    position: relative;
+    .section-description {
+        @include outer-container;
+        .left {
+            position: absolute;
+            left: 3em;
+            bottom: 3em;
+            text-align: left;
+        }
+        .right {
+            position: absolute;
+            left: auto;
+            right: 3em;
+            bottom: 3em;
+            text-align: right;
+        }
+    }
     &.section-text {
         .section-description {
-            @include outer-container;
             padding: 10em 0;
             text-align: center;
         }
