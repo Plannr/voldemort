@@ -1,6 +1,7 @@
 class PasswordResetsController < ApplicationController
 
     def new
+        set_body_class "tight-col narrow-col"
         if signed_in?
             signout
             redirect_to new_password_reset_url, notice: "You have been signed out to reset your password."

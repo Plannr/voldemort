@@ -1,9 +1,21 @@
-<h1>PasswordResets#new</h1>
+<% provide(:title, "Password Reset") %>
 
-<%= form_for(:password_reset, url: password_reset_path) do |f| %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
 
-    <%= f.submit "Reset" %>
-<% end %>
+<section class="section bg-full" data-image-src="<%= image_path('hero-1.jpg') %>">
+    <noscript>
+        <%= image_tag image_path('hero-1.jpg') %>
+    </noscript>
+    <div class="section-description">
+        <h1 class="section-title">Reset your password.</h1>
+        <%= form_for(:password_reset, url: password_reset_path) do |f| %>
+            <div class="field">
+                <%= f.label :email %>
+                <%= f.text_field :email %>
+            </div>
+            <div class="field action">
+                <%= f.submit "Reset" %>
+            </div>
+        <% end %>
+    </div>
+</section>

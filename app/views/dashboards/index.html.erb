@@ -1,48 +1,85 @@
-<h1>Dashboards#index</h1>
-<p>Find me in app/views/dashboards/index.html.erb</p>
+<% provide(:title, "Dashboard") %>
 
-<%= link_to "Create Event", new_event_path %>
-<% if @events.any? %>
-    <% @events.each do |event| %>
-    	<div class="event_content">
-    		<!-- the bottom should hide/show panel
-    		<a href="#hide1" class="hide" id="hide1">+</a>
-    		<a href="#show1" class="show" id="show1">-</a> -->
-    		<div class="event_title">
-    			<div id="e_title_left">
-    				<%= link_to event.title, event_path(event) %>
-    			</div>
-    			<div id="e_status_right">
-    				<div id="e_status_title">Status: </div>
-    				<div id="e_status"><%= event.status %></div>
-    			</div>	
-    		</div>
-    			<div class="d_event_content">
-    				<!-- event details -->
-    				<div id="e_details_left">
-	    				<div id="e_val"><%= event.title %></div>
-	    				<div id="e_col">event name</div>
-	    				<div id="e_val"><%= event.type_of_event %></div>
-	    				<div id="e_col">event category</div>
-	    				<div id="e_val"><%= event.guest_count %></div>
-	    				<div id="e_col">how many people</div>
-	    				<div id="e_val"><%= event.date %></div>
-	    				<div id="e_col">date</div>
-	    				<div id="e_val"><%= "#{event.min_budget} - #{event.max_budget}" %></div>
-	    				<div id="e_col">budget</div>
-	    				</br>
-	    				<%= link_to "Edit Event", edit_event_path(event) %>
-	    				</br>
-	    			</div>
-	    			<!-- planner details -->
-	    			<div id="p_details_right">
-	    				<h1>Your Planner</h1>
-	    				Lorem
-	    			</div>
+<section class="section">
+    <div class="section-description">
+        <h1 class="section-title">Dashboard</h1>
+    </div>
+</section>
 
-    			</div>
-    		</div>
-    	</div>
+<section class="section">
+    <div class="section-description">
+        <%= link_to "Create Event", new_event_path %>
+        <% if @events.any? %>
+            <ul class="list-clean">
+                <% @events.each do |event| %>
+                    <li class="list-item event-content">
+                        <div class="col-2">
+                            <div class="col-block col-block-9">
+                                <h1 class="list-title"><%= link_to event.title, event_path(event) %></h1>
+                            </div>
+                            <div class="col-block col-block-3">
+                                <p><span class="label">Status:</span> <span class="label-content"><%= event.status %></span></p>
+                            </div>
+                        </div>
+                        <%= button_tag "Show details", class: "btn-toggle", type: "button" %>
 
-    <% end %>
-<% end %>
+                        <div class="toggle">
+                            <div class="col-2">
+                                <div class="col-block">
+                                    <h1 class="block-title">Event Details</h1>
+                                    
+                                    <%= form_for(event) do |f| %>
+
+                                        <div class="field">
+                                            <%= f.label :title %>
+                                            <%= f.text_field :title, placeholder: "e.g. seth's birthday" %>
+                                        </div>
+
+                                        <div class="col-2">
+                                            <div class="field">
+                                                <%= f.label :type_of_event, "Category" %>
+                                                <%= f.text_field :type_of_event, placeholder: "e.g. birthday" %>
+                                            </div>
+
+                                            <div class="field">
+                                                <%= f.label :guest_count, "Number of guests" %>
+                                                <%= f.text_field :guest_count, placeholder: "e.g. 12" %>
+                                            </div>
+                                        </div>
+
+                                        <div class="field">
+                                            <%= f.label :date, "Event date" %>
+                                            <%= f.date_field :date, placeholder: "e.g. 07/14/2018" %>
+                                        </div>
+
+                                        <div class="col-2">
+                                            <div class="field">
+                                                <%= f.label :min_budget, "Minimum budget" %>
+                                                <%= f.text_field :min_budget, placeholder: "e.g. $500" %>
+                                            </div>
+
+                                            <div class="field">
+                                                <%= f.label :max_budget, "Maximum budget" %>
+                                                <%= f.text_field :max_budget, placeholder: "e.g. $10,000" %>
+                                            </div>
+                                        </div>
+
+                                        <% unless Time.current > event.date %>
+                                            <div class="field action">
+                                                <%= f.submit "Update" %>
+                                            </div>
+                                        <% end %>
+                                    <% end %>
+                                </div>
+                                <div class="col-block">
+                                    <h1 class="block-titlte">Your Planner</h1>
+                                    <p>Coming soon...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                <% end %>
+            </ul>
+        <% end %>
+    </div>
+</section>

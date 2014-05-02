@@ -1,8 +1,46 @@
-<h1> Events </h1>
+<% provide(:title, @event.title) %>
 
-<ul>
-  <% @event.attributes.each do |k, v| %>
-    <p><strong><%= k %></strong>: <%= v %></p>
-  <% end %>
-</ul>
+<section class="section">
+    <div class="section-description">
+        <%= form_for(@event) do |f| %>
+            <div class="field">
+                <%= f.label :title %>
+                <%= f.text_field :title, placeholder: "e.g. seth's birthday" %>
+            </div>
 
+            <div class="col-2">
+                <div class="field">
+                    <%= f.label :type_of_event, "Category" %>
+                    <%= f.text_field :type_of_event, placeholder: "e.g. birthday" %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :guest_count, "Number of guests" %>
+                    <%= f.text_field :guest_count, placeholder: "e.g. 12" %>
+                </div>
+            </div>
+
+            <div class="field">
+                <%= f.label :date, "Event date" %>
+                <%= f.date_field :date, placeholder: "e.g. 07/14/2018" %>
+                <%#= f.text_field :date, placeholder: "e.g. 07/14/2018" %>
+            </div>
+
+            <div class="col-2">
+                <div class="field">
+                    <%= f.label :min_budget, "Minimum budget" %>
+                    <%= f.text_field :min_budget, placeholder: "e.g. $500" %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :max_budget, "Maximum budget" %>
+                    <%= f.text_field :max_budget, placeholder: "e.g. $10,000" %>
+                </div>
+            </div>
+            
+            <div class="field action">
+                <%= link_to "Edit", edit_event_path %>
+            </div>
+        <% end %>
+    </div>
+</section>

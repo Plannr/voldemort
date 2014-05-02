@@ -12,6 +12,9 @@
     @media screen and (max-width: 768px) {
         bottom: auto;
     }
+    .dashboard & {
+        position: relative;
+    }
     // .homepage & {
     //     position: absolute;
     //     top: 640px;
@@ -36,6 +39,19 @@
             text-transform: lowercase;
             vertical-align: top;
             color: #fff;
+            .dashboard & {
+                margin-right: .75em;
+                padding-right: .75em;
+                border-right: 1px solid #333;
+                color: #333;
+                font-size: 1em;
+                vertical-align: bottom;
+                &:last-child {
+                    margin: 0;
+                    padding: 0;
+                    border-right: none;
+                }
+            }
             // .homepage & {
             //     border-bottom: 1px solid #fff;
             //     vertical-align: bottom;
@@ -57,6 +73,9 @@
             background-repeat: no-repeat;
             background-size: auto 100%;
             text-indent: -9999px;
+            .dashboard & {
+                background-image: image_url('logo-dark.png');
+            }
         }
     }
 }

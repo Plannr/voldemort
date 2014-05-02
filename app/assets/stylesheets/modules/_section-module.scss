@@ -3,6 +3,7 @@
     position: relative;
     .section-description {
         @include outer-container;
+        padding: 0 1.5em;
         .tight-col & {
             max-width: 48em;
         }

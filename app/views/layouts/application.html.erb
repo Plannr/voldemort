@@ -2,8 +2,8 @@
 <html>
 <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <script type="text/javascript" src="//use.typekit.net/pkp8swn.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <%= csrf_meta_tags %>
@@ -24,7 +24,7 @@
 
             <nav>
                 <% if signed_in? %>
-                    <%= link_to "Account Settings", edit_users_path %>
+                    <%= link_to "Welcome, #{current_user.first_name.capitalize}", edit_users_path %>
                     <%= link_to "Logout", logout_path %>
                 <% else %>
                     <%= link_to "Login", login_path, class: "login", data: { toggle: "login-form" } %>
@@ -38,7 +38,7 @@
 
         <div id="main" class="site-main">
             <% flash.each do |type, msg| %>
-                <div class="<%= type %>">
+                <div class="alert-box <%= type %>">
                     <p><%= msg %></p>
                 </div>
             <% end %>

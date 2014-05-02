@@ -15,10 +15,16 @@ form {
             background-color: $color-accent;
             color: #fff;
             text-transform: uppercase;
+            &.toggle {
+                @extend .toggle;
+            }
         }
         @include placeholder {
             font-style: italic;
             font-weight: lighter;
+        }
+        &.toggle {
+            @extend .toggle;
         }
     }
 
