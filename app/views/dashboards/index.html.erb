@@ -3,9 +3,46 @@
 
 <%= link_to "Create Event", new_event_path %>
 <% if @events.any? %>
-  <ul>
     <% @events.each do |event| %>
-      <li><%= link_to event.title, event_path(event) %></li>
+    	<div class="event_content">
+    		<!-- the bottom should hide/show panel
+    		<a href="#hide1" class="hide" id="hide1">+</a>
+    		<a href="#show1" class="show" id="show1">-</a> -->
+    		<div class="event_title">
+    			<div id="e_title_left">
+    				<%= link_to event.title, event_path(event) %>
+    			</div>
+    			<div id="e_status_right">
+    				<div id="e_status_title">Status: </div>
+    				<div id="e_status"><%= event.status %></div>
+    			</div>	
+    		</div>
+    			<div class="d_event_content">
+    				<!-- event details -->
+    				<div id="e_details_left">
+	    				<div id="e_val"><%= event.title %></div>
+	    				<div id="e_col">event name</div>
+	    				<div id="e_val"><%= event.type_of_event %></div>
+	    				<div id="e_col">event category</div>
+	    				<div id="e_val"><%= event.guest_count %></div>
+	    				<div id="e_col">how many people</div>
+	    				<div id="e_val"><%= event.date %></div>
+	    				<div id="e_col">date</div>
+	    				<div id="e_val"><%= "#{event.min_budget} - #{event.max_budget}" %></div>
+	    				<div id="e_col">budget</div>
+	    				</br>
+	    				<%= link_to "Edit Event", edit_event_path(event) %>
+	    				</br>
+	    			</div>
+	    			<!-- planner details -->
+	    			<div id="p_details_right">
+	    				<h1>Your Planner</h1>
+	    				Lorem
+	    			</div>
+
+    			</div>
+    		</div>
+    	</div>
+
     <% end %>
-  </ul>
 <% end %>
