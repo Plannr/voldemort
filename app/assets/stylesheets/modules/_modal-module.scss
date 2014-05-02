@@ -11,14 +11,21 @@
 
 .modal-box {
     width: 420px;
-    margin: 0 auto;
-    padding: 1.5em;
+    margin: 10% auto 0;
+    padding: 2em 1.5em 1.5em;
     background-color: #fff;
     position: relative;
 }
 
 .modal-close {
     position: absolute;
-    top: .75em;
-    right: .75em;
+    top: .25em;
+    right: .25em;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    color: #aaa;
+    &:focus {
+        outline: none;
+    }
 }

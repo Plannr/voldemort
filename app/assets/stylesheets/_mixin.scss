@@ -27,3 +27,10 @@ $ms:true;
         background-image: #{$mode}-gradient($direction, $from, $to);
     }
 }
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {@content}
+    &:-moz-placeholder {@content}
+    &::-moz-placeholder {@content}
+    &:-ms-input-placeholder {@content}  
+}

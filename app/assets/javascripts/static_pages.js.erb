@@ -17,10 +17,12 @@ app.modal.settings = {
 app.modal.open = function ( content ) {
     var widget = this.settings.overlay.append(this.settings.modalBox.append(this.settings.modalClose, content));
     $('.page').append(widget);
+    $('html').css('overflow', 'hidden');
     app.modal.bindEvents();
 };
 
 app.modal.close = function () {
+    $('html').css('overflow', 'auto');
     $('.modal-overlay').remove();
 };
 
@@ -38,6 +40,7 @@ app.bindEvents = function () {
             app.modal.close();
         } else {
             app.modal.open($('#'+formId).toggleClass('toggle'));
+            $('#'+formId).find('.field').first().find('input').focus();
         }
 
         return false;
