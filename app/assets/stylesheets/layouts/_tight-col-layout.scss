@@ -1,0 +1,17 @@
+.tight-col {
+    position: relative;
+    .site-header {
+        position: absolute;
+        top: 0;
+    }
+    .section-description {
+        padding: 3em;
+        position: relative;
+        top: 12em;
+        background-color: #fff;
+        color: #333;
+        .section-title {
+            margin-bottom: .5em;
+        }
+    }
+}

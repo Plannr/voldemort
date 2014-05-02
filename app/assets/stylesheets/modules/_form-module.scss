@@ -1,44 +1,58 @@
-input {
-    display: block;
-    width: 100%;
-    border: none;
-    &:focus {
-        outline: none;
-    }
-    &[type="submit"] {
-        display: inline-block;
-        width: auto;
-        margin: 0 .75em 0 0;
-        padding: .5em .75em;
-        background-color: $color-accent;
-        color: #fff;
-        text-transform: uppercase;
-    }
-    @include placeholder {
-        font-style: italic;
-        font-weight: lighter;
-    }
-}
-
-.field {
-    margin-top: -1px;
-    padding: .25em .75em .5em;
-    border: 1px solid #eee;
-    &:first-child{
-        margin-top: 0;
-    }
-    &.action {
+form {
+    input {
+        display: block;
+        width: 100%;
         border: none;
-        margin-top: .75em;
-        padding: 0;
-        a {
-            color: #aaa;
+        &:focus {
+            outline: none;
+        }
+        &[type="submit"] {
+            display: inline-block;
+            width: auto;
+            margin: 0 .75em 0 0;
+            padding: .5em .75em;
+            background-color: $color-accent;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        @include placeholder {
+            font-style: italic;
+            font-weight: lighter;
         }
     }
-    label {
-        margin-bottom: 1em;
-        color: $color-accent;
-        font-size: .75em;
-        text-transform: uppercase;
+
+    .field {
+        margin-top: -1px;
+        padding: .25em .75em .5em;
+        border: 1px solid #eee;
+        &.action {
+            border: none;
+            margin-top: .75em;
+            padding: 0;
+            a {
+                color: #aaa;
+            }
+        }
+        label {
+            margin-bottom: 1em;
+            color: $color-accent;
+            font-size: .75em;
+            text-transform: uppercase;
+        }
+        .field_with_errors {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+    }
+    .col-2 {
+        .field {
+            width: 50%; 
+            float: left;
+            &:nth-of-type(2n+1) {
+                border-right: none;
+            }
+        }
     }
 }

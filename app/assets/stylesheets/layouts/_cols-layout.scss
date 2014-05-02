@@ -1,0 +1,21 @@
+.col-2 {
+    &:before,
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+    .col-block {
+        width: 50%;
+        float: left;
+        &:first-child {
+            padding-right: 1.5em;
+        }
+    }
+}
+.col-block {
+    float: left;
+    &.col-block-right {
+        float: right;
+    }
+}

@@ -3,6 +3,9 @@
     position: relative;
     .section-description {
         @include outer-container;
+        .tight-col & {
+            max-width: 48em;
+        }
         .left {
             position: absolute;
             left: 3em;
