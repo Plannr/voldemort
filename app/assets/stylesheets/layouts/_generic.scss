@@ -4,7 +4,7 @@
 .site-header {
     @include outer-container;
     padding: 3em 1.5em 0;
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -12,17 +12,17 @@
     @media screen and (max-width: 768px) {
         bottom: auto;
     }
-    .homepage & {
-        position: absolute;
-        top: 640px;
-        @media screen and (max-width: 768px) {
-            top: 0;
-            bottom: auto;
-        }
-        a {
-            color: #fff;
-        }
-    }
+    // .homepage & {
+    //     position: absolute;
+    //     top: 640px;
+    //     @media screen and (max-width: 768px) {
+    //         top: 0;
+    //         bottom: auto;
+    //     }
+    //     a {
+    //         color: #fff;
+    //     }
+    // }
     nav {
         width: 50%;
         line-height: 6em;
@@ -36,13 +36,13 @@
             text-transform: lowercase;
             vertical-align: top;
             color: #fff;
-            .homepage & {
-                border-bottom: 1px solid #fff;
-                vertical-align: bottom;
-                @media screen and (max-width: 768px) {
-                    vertical-align: top;
-                }
-            }
+            // .homepage & {
+            //     border-bottom: 1px solid #fff;
+            //     vertical-align: bottom;
+            //     @media screen and (max-width: 768px) {
+            //         vertical-align: top;
+            //     }
+            // }
         }
     }
     .logo {
