@@ -21,13 +21,19 @@ app.modal.open = function ( content ) {
     app.modal.bindEvents();
 };
 
-app.modal.close = function () {
+app.modal.close = function (e) {
     $('html').css('overflow', 'auto');
     $('.modal-overlay').remove();
+    return false;
 };
 
 app.modal.bindEvents = function () {
     $('.modal-close').on('click', app.modal.close);
+    $('body').on('keyup', function (e) {
+        if ( e.keyCode === 27 ) {
+            app.modal.close();
+        }
+    });
 };
 
 app.bindEvents = function () {
