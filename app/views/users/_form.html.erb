@@ -40,8 +40,13 @@
     </div>
 
     <div class="field action">
-        <%= f.submit "Register" %>
-        <%= link_to "Cancel", root_url %>
+        <% unless f.object.new_record? %>
+            <%= f.submit "Update" %>
+            <%= link_to "Dashboard", dashboard_url %>
+        <% else %>
+            <%= f.submit "Register" %>
+            <%= link_to "Cancel", root_url %>
+        <% end %>
     </div>
 
 <% end %>
