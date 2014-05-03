@@ -35,6 +35,8 @@ gem 'date_validator'
 gem 'rails_12factor'
 gem 'carrierwave'
 
+gem 'asset_sync'
+
 group :development, :test do
   gem 'pry'
   gem 'pry-debugger'
