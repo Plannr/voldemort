@@ -46,12 +46,14 @@
           background: #f26c55;
           border-radius:25px;
           padding: 15px;
-          text-align: center;
           color: #fff;
+          float: left;
+          margin: 10px;
         }
 
         #container-title, #container-text {
-            float: left;
+            /*float: left;*/
+            text-align: center;
         }
 
         #container-title {
