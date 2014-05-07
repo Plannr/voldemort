@@ -43,6 +43,10 @@
             color: #fff;
             padding: 15px;
             height: 15em;
+            @media screen and (max-width: 1088px) {
+                @include span-columns(6);
+                margin: 0 10px 10px 0;
+            }
             @media screen and (max-width: 768px) {
                 @include span-columns(12);
                 margin: 0 0 10px 0;
