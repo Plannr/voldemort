@@ -1,4 +1,5 @@
 .btn {
+    transition: -webkit-transform .3s;
     display: inline-block;  
     padding: .75em 1.5em;
     border: none;
@@ -7,4 +8,16 @@
     &:focus {
         outline: none;
     }
+    &:hover {
+        -webkit-transform: translateY(2px);
+    }
+}
+
+.btn-primary {
+    background-color: #eee;
+}
+
+.btn-accent {
+    background-color: $color-accent;
+    color: #fff;
 }

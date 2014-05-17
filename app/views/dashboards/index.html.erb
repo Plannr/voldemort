@@ -1,14 +1,14 @@
 <% provide(:title, "Dashboard") %>
 
-<section class="section">
+<section class="section section-header">
     <div class="section-description">
-        <h1 class="section-title">Dashboard</h1>
+        <h1 class="section-title alignleft">Dashboard</h1>
+        <%= link_to "Create Event", new_event_path, { class: "btn btn-primary btn-accent alignright"} %>
     </div>
 </section>
 
 <section class="section">
     <div class="section-description">
-        <%= link_to "Create Event", new_event_path %>
         <% if @events.any? %>
             <ul class="list-clean">
                 <% @events.each do |event| %>
@@ -21,7 +21,7 @@
                                 <p><span class="label">Status:</span> <span class="label-content"><%= event.status %></span></p>
                             </div>
                         </div>
-                        <%= button_tag "Show details", class: "btn-toggle", type: "button" %>
+                        <%= button_tag "Show details", class: "btn-toggle btn btn-primary", type: "button" %>
 
                         <div class="toggle">
                             <div class="col-2">
