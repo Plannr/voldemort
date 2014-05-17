@@ -54,10 +54,17 @@ app.bindEvents = function () {
     });
 
     $('.btn-toggle').on('click', function (e) {
-        var el = $(this);
-
-        el.next().toggleClass('toggle');
+        var el = $(this),
+            text = el.text();
         
+        el.next().toggleClass('toggle');
+
+        if ( el.text().match(/Show/) ) {
+            el.text(text.replace(/Show/gi, "Hide"));
+        } else {
+            el.text(text.replace(/Hide/gi, "Show"));
+        }
+
         return false;
     });
 };
