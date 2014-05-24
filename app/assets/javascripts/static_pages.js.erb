@@ -57,12 +57,13 @@ app.bindEvents = function () {
         var el = $(this),
             text = el.text();
         
-        el.next().toggleClass('toggle');
+        el.toggleClass('show').find('span').toggleClass('close').parent().next().slideToggle(200);
+        // el.find('span').toggleClass('close').parent().next().toggleClass('toggle');
 
         if ( el.text().match(/Show/) ) {
-            el.text(text.replace(/Show/gi, "Hide"));
+            el.html(html.replace(/Show/gi, "Hide"));
         } else {
-            el.text(text.replace(/Hide/gi, "Show"));
+            el.html(html.replace(/Hide/gi, "Show"));
         }
 
         return false;

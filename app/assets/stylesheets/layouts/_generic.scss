@@ -1,5 +1,14 @@
 .page{
     position: relative;
+    .dashboard & {
+        background-image: image_url('texture-bg.png');
+        form {
+            display: block;
+            padding: 1.5em;
+            border-radius: 3px;
+            background-color: #fff;
+        }
+    }
 }
 .site-header {
     @include outer-container;
@@ -16,17 +25,6 @@
         padding-bottom: 1.5em;
         position: relative;
     }
-    // .homepage & {
-    //     position: absolute;
-    //     top: 640px;
-    //     @media screen and (max-width: 768px) {
-    //         top: 0;
-    //         bottom: auto;
-    //     }
-    //     a {
-    //         color: #fff;
-    //     }
-    // }
     nav {
         width: 50%;
         line-height: 6em;
@@ -56,13 +54,6 @@
                     border-right: none;
                 }
             }
-            // .homepage & {
-            //     border-bottom: 1px solid #fff;
-            //     vertical-align: bottom;
-            //     @media screen and (max-width: 768px) {
-            //         vertical-align: top;
-            //     }
-            // }
         }
     }
     .logo {
@@ -70,7 +61,6 @@
         float: left;
         a {
             display: block;
-            // width: 4em;
             height: 3em;
             background-image: image_url('logo-light.png');
             background-position: left top;
@@ -90,7 +80,6 @@
             @extend .clearfix;
             margin-bottom: 1.5em;
             padding: 1.5em 0;
-            box-shadow: 0 0 8px rgba(#000, .2);
             background-color: #fafafa;
         }
     }
