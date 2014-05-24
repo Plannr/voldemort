@@ -7,3 +7,59 @@
 .alignright {
     float: right;
 }
+.arrow-right {
+    transition: all .3s;
+    display: inline-block;
+    width: .75em;
+    height: 1px;
+    margin-left: .25em;
+    position: relative;
+    vertical-align: middle;
+    background-color: $color-accent;
+    &:before,
+    &:after {
+        transition: all .3s;
+        display: inline-block;
+        width: .35em;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $color-accent;
+        content: "";
+        transform-origin: .35em;
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+    &.close {
+        display: inline-block;
+        width: 1em;
+        height: 1px;
+        margin-left: .5em;
+        position: relative;
+        vertical-align: middle;
+        transform: rotate(45deg);
+        &:before,
+        &:after {
+            display: inline-block;
+            width: 1em;
+            height: 1px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $color-accent;
+            content: "";
+            transform-origin: .5em;
+        }
+        &:before {
+            transform: rotate(90deg);
+        }
+        &:after {
+            transform: rotate(-90deg);
+        }
+    }
+}

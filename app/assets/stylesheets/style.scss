@@ -1,6 +1,7 @@
 //= depend_on_asset "logo-light.png"
 //= depend_on_asset "logo-dark.png"
 //= depend_on_asset "middle.png"
+//= depend_on_asset "texture-bg.png"
 
 @import "bourbon";
 @import "neat";
@@ -19,6 +20,9 @@
 @import "modules/list-module";
 @import "modules/alert-module";
 
+@import "components/event-list-component";
+
 @import "layouts/cols-layout";
 @import "layouts/tight-col-layout";
 @import "layouts/generic";
+

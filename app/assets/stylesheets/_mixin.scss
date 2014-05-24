@@ -34,3 +34,14 @@ $ms:true;
     &::-moz-placeholder {@content}
     &:-ms-input-placeholder {@content}  
 }
+
+@mixin typeset( $size: 16, $lineheight: 1, $unit: px ) {
+    @if $unit == px {
+        font-size: $size + px;
+        font-size: ( $size / 16 ) + em;
+    } @else if $unit == rem {
+        font-size: $size + px;
+        font-size: ( $size / 16 ) + rem;
+    }
+    line-height: $lineheight;
+}
