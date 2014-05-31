@@ -57,14 +57,20 @@ app.bindEvents = function () {
         var el = $(this);
 
         el.next().toggleClass('toggle');
-        
+
         return false;
     });
+
+    $('#scroll-wrap').on('click', function (e) {
+        $('html, body').animate({
+            scrollTop: $("#learn").offset().top
+        }, 2000);
+    })
 };
 
 app.bgFull = function ( selector ) {
     var el = $(selector);
-    
+
     $.each(el, function() {
         var thisEl = $(this);
         var imgSrc = thisEl.data('image-src');

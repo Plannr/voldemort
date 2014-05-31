@@ -1,7 +1,7 @@
 .section {
     padding: 0 1.5em;
     position: relative;
-    
+
     .section-hr {
         border: 0;
         height: 1px;
@@ -64,6 +64,7 @@
         #container-text {
             font-size: 1em;
         }
+
     }
     &.section-text-bg {
         background-image: image_url('middle.png');
@@ -75,7 +76,7 @@
             padding: 10em 0;
             text-align: center;
         }
-        
+
         .red-bold {
             color: #f00;
         }
@@ -96,7 +97,7 @@
         }
     }
     &.bg-full {
-        min-height: 42em;
+        min-height: 30em;
         color: #fff;
         @media screen and (max-width: 768px) {
             min-height: 32em;

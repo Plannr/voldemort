@@ -8,24 +8,13 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 20;
     @media screen and (max-width: 768px) {
         bottom: auto;
     }
     .dashboard & {
         position: relative;
     }
-    // .homepage & {
-    //     position: absolute;
-    //     top: 640px;
-    //     @media screen and (max-width: 768px) {
-    //         top: 0;
-    //         bottom: auto;
-    //     }
-    //     a {
-    //         color: #fff;
-    //     }
-    // }
     nav {
         width: 50%;
         line-height: 6em;
@@ -55,13 +44,6 @@
                     border-right: none;
                 }
             }
-            // .homepage & {
-            //     border-bottom: 1px solid #fff;
-            //     vertical-align: bottom;
-            //     @media screen and (max-width: 768px) {
-            //         vertical-align: top;
-            //     }
-            // }
         }
     }
     .logo {
@@ -83,7 +65,35 @@
     }
 }
 
+#footer {
+    background-color: #f26c55;
+}
+
 .site-footer {
     @include outer-container;
+    color: #fff;
     padding: .75em 1.5em;
+}
+
+.container {
+    float: left;
+    position: relative;
+}
+
+.main-email {
+    img {
+        padding-right: 10px;
+    }
+    a {
+        font-weight: bold;
+        color: black;
+    }
+    a:hover {
+        color: #f26c55;
+    }
+}
+
+.main-social  {
+    margin-top: 30px;
+    padding-right: 10px;
 }
