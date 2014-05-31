@@ -56,7 +56,6 @@ app.bindEvents = function () {
     $('.btn-toggle').on('click', function (e) {
         var el = $(this),
             text = el.text();
-        
         el.toggleClass('show').find('span').toggleClass('close').parent().next().slideToggle(200);
         // el.find('span').toggleClass('close').parent().next().toggleClass('toggle');
 
