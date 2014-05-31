@@ -2,11 +2,11 @@ module ApplicationHelper
 
   def full_title(title)
     base_title = "Plannr"
-
+    tag_line = "Find a planner for your next event"
     if title.empty?
-      base_title
+      "#{base_title} - #{tag_line}"
     else
-      "#{title} | #{base_title}"
+      "#{base_title} | #{title}"
     end
   end
 

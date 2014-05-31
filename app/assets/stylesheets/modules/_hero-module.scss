@@ -1,5 +1,5 @@
 .hero {
-    height: 900px;
+    height: 800px;
     color: #fff;
     @media screen and (max-width: 768px) {
         height: 720px;
@@ -8,10 +8,18 @@
         height: 480px;
     }
     .section-description {
+        z-index: 10;
         position: absolute;
         left: 0;
         right: 0;
         text-align: center;
+    }
+    .user-man-description {
+        z-index: 10;
+        @include outer-container;
+        .tight-col & {
+            max-width: 48em;
+        }
     }
     .section-title {
         margin-top: 6em;
@@ -35,7 +43,6 @@
     }
     .btn {
         padding: .75em 2em;
-        background-color: #f26c55;
         @include gradient(linear,top,rgb(242, 108, 85),rgb(243, 81, 53),'left top, left bottom');
         filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f26c55', EndColorStr='#f35135');
         color: #fff;
@@ -51,5 +58,27 @@
             @include gradient(linear,top,rgb(243, 81, 53),rgb(242, 108, 85),'left top, left bottom');
             filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f35135', EndColorStr='#f26c55');
         }
+    }
+
+    .scroll-button {
+        position: absolute;
+        margin-top: 50px;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        padding-bottom: 65x;
+        opacity: 1;
+        text-align: center;
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        transition: all 500ms ease;
+        a:hover {
+            cursor: pointer;
+        }
+    }
+    .scroll-button:hover {
+        margin-top: 80px;
+        opacity: 0.7;
     }
 }
