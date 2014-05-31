@@ -1,5 +1,14 @@
 .page{
     position: relative;
+    .dashboard & {
+        background-image: image_url('texture-bg.png');
+        form {
+            display: block;
+            padding: 1.5em;
+            border-radius: 3px;
+            background-color: #fff;
+        }
+    }
 }
 .site-header {
     @include outer-container;
@@ -8,11 +17,12 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 20;
+    z-index: 1;
     @media screen and (max-width: 768px) {
         bottom: auto;
     }
     .dashboard & {
+        padding-bottom: 1.5em;
         position: relative;
     }
     nav {
@@ -51,7 +61,6 @@
         float: left;
         a {
             display: block;
-            // width: 4em;
             height: 3em;
             background-image: image_url('logo-light.png');
             background-position: left top;
@@ -65,35 +74,18 @@
     }
 }
 
-#footer {
-    background-color: #f26c55;
+.site-main {
+    .dashboard & {
+        .section-header {
+            @extend .clearfix;
+            margin-bottom: 1.5em;
+            padding: 1.5em 0;
+            background-color: #fafafa;
+        }
+    }
 }
 
 .site-footer {
     @include outer-container;
-    color: #fff;
     padding: .75em 1.5em;
-}
-
-.container {
-    float: left;
-    position: relative;
-}
-
-.main-email {
-    img {
-        padding-right: 10px;
-    }
-    a {
-        font-weight: bold;
-        color: black;
-    }
-    a:hover {
-        color: #f26c55;
-    }
-}
-
-.main-social  {
-    margin-top: 30px;
-    padding-right: 10px;
 }

@@ -54,23 +54,25 @@ app.bindEvents = function () {
     });
 
     $('.btn-toggle').on('click', function (e) {
-        var el = $(this);
+        var el = $(this),
+            text = el.text();
+        
+        el.toggleClass('show').find('span').toggleClass('close').parent().next().slideToggle(200);
+        // el.find('span').toggleClass('close').parent().next().toggleClass('toggle');
 
-        el.next().toggleClass('toggle');
+        if ( el.text().match(/Show/) ) {
+            el.html(html.replace(/Show/gi, "Hide"));
+        } else {
+            el.html(html.replace(/Hide/gi, "Show"));
+        }
 
         return false;
     });
-
-    $('#scroll-wrap').on('click', function (e) {
-        $('html, body').animate({
-            scrollTop: $("#learn").offset().top
-        }, 2000);
-    })
 };
 
 app.bgFull = function ( selector ) {
     var el = $(selector);
-
+    
     $.each(el, function() {
         var thisEl = $(this);
         var imgSrc = thisEl.data('image-src');

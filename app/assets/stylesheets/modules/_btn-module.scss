@@ -1,10 +1,23 @@
 .btn {
+    transition: transform .3s;
     display: inline-block;
     padding: .75em 1.5em;
     border: none;
-    border-radius: 8px;
+    border-radius: 3px;
     background-color: transparent;
     &:focus {
         outline: none;
     }
+    &:hover {
+        transform: translateY(2px);
+    }
+}
+
+.btn-primary {
+    background-color: #eee;
+}
+
+.btn-accent {
+    background-color: $color-accent;
+    color: #fff;
 }
