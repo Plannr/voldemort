@@ -1,14 +1,14 @@
 <% provide(:title, "Dashboard") %>
 
-<section class="section">
+<section class="section section-header">
     <div class="section-description">
-        <h1 class="section-title">Dashboard</h1>
+        <h1 class="section-title alignleft">Dashboard</h1>
+        <%= link_to "Create Event", new_event_path, { class: "btn btn-primary btn-accent alignright"} %>
     </div>
 </section>
 
 <section class="section">
     <div class="section-description">
-        <%= link_to "Create Event", new_event_path %>
         <% if @events.any? %>
             <ul class="list-clean">
                 <% @events.each do |event| %>
@@ -17,13 +17,15 @@
                             <div class="col-block col-block-9">
                                 <h1 class="list-title"><%= link_to event.title, event_path(event) %></h1>
                             </div>
-                            <div class="col-block col-block-3">
+                            <div class="col-block col-block-3 event-status">
                                 <p><span class="label">Status:</span> <span class="label-content"><%= event.status %></span></p>
                             </div>
                         </div>
-                        <%= button_tag "Show details", class: "btn-toggle", type: "button" %>
-
-                        <div class="toggle">
+                        <button class="btn-toggle btn btn-primary" type="button">
+                            <span class="show">Show</span><span class="hide">Hide</span> Details
+                            <span class="toggle-icon arrow-right"></span>
+                        </button>
+                        <div class="toggle event-details">
                             <div class="col-2">
                                 <div class="col-block">
                                     <h1 class="block-title">Event Details</h1>
@@ -66,7 +68,7 @@
 
                                         <% unless Time.current > event.date %>
                                             <div class="field action">
-                                                <%= f.submit "Update" %>
+                                                <%= f.submit "Update", class: "btn" %>
                                             </div>
                                         <% end %>
                                     <% end %>

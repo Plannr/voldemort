@@ -1,4 +1,13 @@
 <%= form_for(@event) do |f| %>
+
+    <h1 class="form-title">
+        <% unless f.object.new_record? %>
+            <%= @event.title %>
+        <% else %>
+            Create an event
+        <% end %>
+    </h1>
+
     <% if @event.errors.any? %>
         <div id="error_explanation">
             <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -46,7 +55,7 @@
         </div>
     </div>
     
-    <div class="actions">
+    <div class="field action">
         <%= f.submit %>
         <% unless f.object.new_record? %>
             <%= link_to "Dashboard", dashboard_url %>

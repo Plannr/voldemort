@@ -1,0 +1,56 @@
+// Place all the styles related to the dashboards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//needs to be a panel
+.event-content {
+    margin-bottom: 1.5em;
+    padding: .75em 1.5em 1.8em;
+    position: relative;
+    border-radius: 3px;
+    background-color: #fff;
+    overflow: hidden;
+    .list-title {
+        margin-bottom: .25em;
+        @include typeset(32, (40/32));
+        a {
+            color: $color-accent;
+        }
+    }
+    .event-status {
+        line-height: 40px;
+    }
+    .btn-toggle{
+        display: block;
+        width: 100%;
+        padding: .25em 1.5em;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        text-align: left;
+        &:hover {
+            transform: none;
+        }
+        &.show {
+            .show {
+                display: none;
+            }
+            .hide {
+                display: inline-block;
+            }
+        }
+        .hide {
+            display: none;
+        }
+    }
+    .event-details {
+        padding-top: 1.5em;
+        border-top: 2px solid #eee;
+    }
+    form {
+        margin-bottom: 1.5em;
+    }
+}
