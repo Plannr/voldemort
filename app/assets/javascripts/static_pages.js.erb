@@ -68,6 +68,12 @@ app.bindEvents = function () {
 
         return false;
     });
+
+    $('#scroll-wrap').on('click', function (e) {
+        $('html, body').animate({
+            scrollTop: $("#learn").offset().top
+        }, 2000);
+    })
 };
 
 app.bgFull = function ( selector ) {
