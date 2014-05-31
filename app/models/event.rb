@@ -18,7 +18,7 @@ class Event < ActiveRecord::Base
   def valid_budget
     if min_budget?
       min_budget
-    else 
+    else
       0
     end
   end

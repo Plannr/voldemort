@@ -36,6 +36,7 @@ class EventsController < ApplicationController
 
   def create
     # @event = Event.new(event_params)
+    binding.pry
     @event = current_user.events.new(event_params)
 
     respond_to do |format|
@@ -67,5 +68,6 @@ class EventsController < ApplicationController
 
     def event_params
       params.require(:event).permit(:user_id, :title, :type_of_event, :guest_count, :date, :min_budget, :max_budget)
+      .merge(location: "Chicago", status: "Pending")
     end
 end
