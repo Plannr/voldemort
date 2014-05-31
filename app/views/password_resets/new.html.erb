@@ -1,13 +1,14 @@
 <% provide(:title, "Password Reset") %>
 
 
-
-<section class="section bg-full" data-image-src="<%= image_path('hero-1.jpg') %>">
-    <noscript>
-        <%= image_tag image_path('hero-1.jpg') %>
-    </noscript>
-    <div class="section-description">
-        <h1 class="section-title">Reset your password.</h1>
+<section class="hero">
+    <section class="bg-full" data-image-src="<%= image_path('hero-1.jpg') %>">
+        <noscript>
+            <%= image_tag image_path('hero-1.jpg') %>
+        </noscript>
+    </section>
+    <div class="user-man-description">
+        <h1 class="user-man-title">Reset your password.</h1>
         <%= form_for(:password_reset, url: password_reset_path) do |f| %>
             <div class="field">
                 <%= f.label :email %>
