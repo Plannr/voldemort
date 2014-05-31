@@ -5,7 +5,7 @@
     .section-hr {
         border: 0;
         height: 1px;
-        background-image: linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+        background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
     }
     .section-description {
         @include outer-container;
@@ -107,6 +107,18 @@
         padding: 6em 0 3em;
         .section-description {
             padding: 0 1.5em;
+        }
+    }
+    .main-email {
+        margin-bottom: 20px;
+        a {
+            color: black;
+        }
+        a:hover {
+            color: #f26c55;
+        }
+        #email-text {
+            padding-left: 10px;
         }
     }
 }
