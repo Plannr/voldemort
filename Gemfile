@@ -37,6 +37,8 @@ gem 'carrierwave'
 
 gem 'asset_sync'
 
+gem "jquery-scrollto-rails"
+
 group :development, :test do
   gem 'pry'
   gem 'pry-debugger'

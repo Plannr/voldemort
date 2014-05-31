@@ -4,12 +4,15 @@
         position: absolute;
         top: 0;
     }
-    .section-description {
+
+    .section-description,
+    .user-man-description {
         padding: 3em;
         position: relative;
         top: 12em;
         background-color: #fff;
         color: #333;
+        .user-man-title,
         .section-title {
             margin-bottom: .5em;
         }

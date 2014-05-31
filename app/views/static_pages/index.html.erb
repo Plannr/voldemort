@@ -1,15 +1,24 @@
-<section class="section hero bg-full" data-image-src="<%= image_path('hero-1.jpg') %>">
-    <noscript>
-        <%= image_tag image_path('hero-1.jpg') %>
-    </noscript>
+
+<section class="hero">
+    <section class="bg-full" data-image-src="<%= image_path('hero-1.jpg') %>">
+        <noscript>
+            <%= image_tag image_path('hero-1.jpg') %>
+        </noscript>
+    </section>
     <div class="section-description">
-        <h1 class="section-title">..... at your fingertips</h1>
+        <h1 class="section-title">... at your fingertips.</h1>
         <%= link_to "Plan my event", register_user_path, class: "btn section-action" %>
+
+        <div class="scroll-button">
+            <a id="scroll-wrap">
+                <%= image_tag image_path('down.png') %>
+            </a>
+        </div>
     </div>
 </section>
 
 <section class="section section-text section-text-bg">
-    <div class="section-description">
+    <div class="section-description" id="learn">
         <h1 class="section-title">What we do</h1>
         <hr class="section-hr">
         <p><b class="red-bold">Plannr</b> is a <b>platform</b> that <b>connects</b> you with people that <b>love</b> planning events.  It's a <b>low-cost</b>, <b>efficient</b> way for you to find someone that will meet all your planning needs. </p><p> The planners are <b>hand picked</b> based on their experience level and 
@@ -22,15 +31,9 @@
     <noscript>
         <%= image_tag image_path('home-1.jpg') %>
     </noscript>
-    <div class="section-description">
-        <div class="left">
-            <h1 class="section-title">Enjoy the party</h1>
-            <p>Be with your friends and loved ones, and let your <b>plannr</b> take care of the rest.</p>
-        </div>
-    </div>
 </section>
 
-<section class="section section-text">
+<section class="section section-text section-text-bg">
     <div class="section-description">
         <h1 class="section-title">How it works</h1>
         <hr class="section-hr">
@@ -40,7 +43,7 @@
                     Create
                 </div>
                 <div id="container-text">
-                    Register with Plannr and fill out some quick details about the event.  The Plannr staff will find a planner that best fits your needs.  
+                    Register with Plannr and fill out some quick details about the event.  The Plannr staff will find a planner that best fits your needs.
                 </div>
             </div>
 
@@ -58,7 +61,7 @@
                     Relax
                 </div>
                 <div id="container-text">
-                    Let the trusty planner figure out all the messy details.  They will contact the vendors, work to get great deals, contact your guest list, and anything else to make sure your event is successful.    
+                    Let the trusty planner figure out all the messy details.  They will contact the vendors, work to get great deals, contact your guest list, and anything else to make sure your event is successful.
                 </div>
             </div>
 
@@ -69,43 +72,7 @@
                 <div id="container-text">
                     On the day of the event,  stay stress-free while your planner ensures everything is in order.  Spend more time with your friends and loved ones and let the planner take care of the rest.
                 </div>
-                
             </div>
-
-            <!-- <div id="container">
-                <div id="container-div">
-                    <div id="container-title">
-                        Create
-                    </div>
-                    <div id="container-text">
-                        Register with Plannr and fill out some quick details about the event.  The Plannr staff will find a planner that best fits your needs.  
-                    </div>
-                </div>
-                <div id="container-div">
-                    <div id="container-title">
-                        Connect
-                    </div>
-                    <div id="container-text">
-                        Your planner is there to fully help you with anything you need.  Talk to them about your budget, how many people you're expecting, and anything else that comes to mind.  They're there to listen and advice.
-                    </div>
-                </div>
-                <div id="container-div">
-                    <div id="container-title">
-                        Relax
-                    </div>
-                    <div id="container-text">
-                        Let the trusty planner figure out all the messy details.  They will contact the vendors, work to get great deals, contact your guest list, and anything else to make sure your event is successful.    
-                    </div>
-                </div>
-                <div id="container-div">
-                    <div id="container-title">
-                        Enjoy
-                    </div>
-                    <div id="container-text">
-                        On the day of the event,  stay stress-free while your planner ensures everything is in order.  Spend more time with your friends and loved ones and let the planner take care of the rest.
-                    </div>
-                </div>
-            </div> -->
         </p>
     </div>
 </section>
@@ -114,12 +81,6 @@
     <noscript>
         <%= image_tag image_path('home-2.jpg') %>
     </noscript>
-    <div class="section-description">
-        <div class="right">
-            <h1 class="section-title">Stay Connected</h1>
-            <p>Anytime you need to talk, your planner is there for you.</p>
-        </div>
-    </div>
 </section>
 
 <section class="section contact section-text-bg">
@@ -128,6 +89,21 @@
         <div class="col-2">
             <div class="col-block">
                 <p>Give us any feedback you may have, or just drop us a quick hi.</p>
+                <p>
+                    <div class="main-email">
+                        <p><p>
+                        <a href="mailto:hello@yourplannr.com?Subject=Hello%20plannr%20staff!!" target="_top">
+                        <%= image_tag image_path('email.png') %>    hello@yourplannr.com</a>
+                    </div>
+                    <div class="main-social">
+                        <a href="https://www.facebook.com/yourplannr" target="_blank">
+                            <%= image_tag image_path('facebook.png') %>
+                        </a>
+                        <a href="https://twitter.com/yourplannr" target="_blank">
+                            <%= image_tag image_path('twitter.png') %>
+                        </a>
+                    </div>
+                </p>
             </div>
             <div class="col-block">
                 <%= form_for(:notifications, url: :contact_us) do |f| %>
